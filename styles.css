@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .dancing-script {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
@@ -21,6 +25,48 @@ header {
 
 nav {
     justify-content: center;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1em;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: white;
+    transition: width .3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 button {
@@ -71,7 +117,7 @@ main {
 
 .hero {
     position: relative;
-    height: 30em;
+    height: 28em;
     background: url("12153.jpg") bottom/cover no-repeat fixed;
     display: flex;
     flex-direction: column;
@@ -114,7 +160,7 @@ main {
 .countdown {
     color: #e97c8e;
     background-color: white;
-    height: 4em;
+    height: 18em;
     font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
@@ -124,16 +170,16 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .text-count {
     padding-top: 1em;
-    font-size: 1em;
+    font-size: 2em;
 }
 
 .time-box {
     color: #e97c8e;
     font-family: "Dancing Script", cursive;
-    font-size: 2em;
+    font-size: 4em;
+    padding-top: 0.4em;
     padding-bottom: 0.5em;
 }
 
@@ -148,7 +194,6 @@ main {
 }
 
 .localizacao {
-    /* color: #7E063D; */
     color: #312b2b;
     width: 45%;
     font-family: "Poppins", sans-serif;
@@ -172,10 +217,9 @@ h3 {
 
 .presentes {
     padding: 2em 10% 0;
-    height: 30em;
+    height: max-content;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     font-family: "Poppins", sans-serif;
 }
 
@@ -183,22 +227,32 @@ h3 {
     margin-top: 0.7em;
 }
 
-.cards {
-    margin-top: 1em;
+.img-presentes {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 1.2em;
+    margin-bottom: 1.5em;
 }
 
-.cards>* {
-    max-width: 8em;
-    object-fit: contain;
-    display: block;
-    border-radius: 16px;
+.img-presentes>* {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-presentes span {
+    font-size: 1em;
+    font-style: italic;
+}
+
+.img-presentes img {
+    width: 15em;
+    max-height: 15em;
+    object-fit: cover;
+    margin-top: 0.5em;
+    border-radius: 12px;
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
-}
-
-.cards img:hover {
-    transform: scale(1.08);
+    transition: transform 0.2s ease-in-out;
 }
 
 .gosto {
@@ -207,6 +261,62 @@ h3 {
     height: 30em;
     display: flex;
     flex-direction: column;
+}
+
+.texto-gosto {
+    margin-bottom: 2em;
+}
+
+.texto-gosto p {
+    margin-top: 0.7em;
+}
+
+.img-gosto {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.img-gosto span {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.img-gosto img {
+    width: 20em;
+    max-height: 20em;
+
+    object-fit: cover;
+
+    margin-top: 0.5em;
+    border-radius: 12px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+#urubu {
+    object-position: bottom;
+}
+
+.presenca {
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    height: 10em;
+    background: url("paper3.jpg") bottom/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.presenca p {
+    margin-bottom: 0.4em;
 }
 
 footer {
@@ -223,58 +333,270 @@ footer {
 
 
 
+/* ===========================================
+   TELAS ATÉ 1024px (tablets)
+   =========================================== */
+@media (max-width: 1024px) {
 
-
-
-.carousel {
-    position: relative;
-    width: 80%;
-    max-width: 700px;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.carousel img {
-    width: 100%;
-    display: none;
-}
-
-.carousel img.active {
-    display: block;
-    animation: fade 1s ease-in-out;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.4;
+    * {
+        text-align: center !important;
     }
 
-    to {
-        opacity: 1;
+    .hero h1 {
+        font-size: 6em;
+    }
+
+    .local,
+    .presentes,
+    .gosto {
+        padding: 2em 5%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-presentes,
+    .img-gosto {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .img-presentes img {
+        width: 12em;
+        max-height: 12em;
+        margin: 0 auto;
+    }
+
+    .img-gosto img {
+        width: 15em;
+        max-height: 15em;
+        margin: 0 auto;
+    }
+
+    .localizacao {
+        width: 100%;
+        text-align: center;
     }
 }
 
-.controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+/* ===========================================
+   TELAS ATÉ 768px (celulares grandes)
+   =========================================== */
+@media (max-width: 768px) {
+
+    * {
+        text-align: center !important;
+    }
+
+    /* HEADER */
+    header {
+        height: auto;
+        padding: 0.6em 0;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 1em;
+    }
+
+        .nav-menu {
+        display: none;
+        position: absolute;
+        top: 3.5em;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.92);
+        flex-direction: column;
+        text-align: center;
+        padding: 1em 0;
+        gap: 1.2em;
+        border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+
+    /* quando ativado pelo JS */
+    .nav-menu.active {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    button {
+        padding: 0.4em 0.6em;
+        font-size: 0.9em;
+    }
+
+    /* HERO */
+    .hero {
+        height: 22em;
+        background-attachment: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 4.5em;
+    }
+
+    .subtitulo {
+        font-size: 1em;
+        padding: 0.5em 1em;
+    }
+
+    /* COUNTDOWN */
+    .countdown {
+        text-align: center;
+    }
+
+    .text-count {
+        font-size: 1.4em;
+    }
+
+    .time-box {
+        font-size: 3em;
+    }
+
+    /* LOCAL */
+    .local {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .localizacao {
+        width: 100%;
+        margin-bottom: 1.5em;
+        text-align: center;
+    }
+
+    .mapa {
+        width: 100%;
+        height: 18em;
+        margin: 0 auto;
+    }
+
+    /* PRESENTES */
+    .presentes {
+        text-align: center;
+        align-items: center;
+    }
+
+    .img-presentes {
+        flex-direction: column;
+        gap: 1.5em;
+        align-items: center;
+    }
+
+    .img-presentes img {
+        width: 14em;
+        height: 14em;
+        margin: 0 auto;
+    }
+
+    /* GOSTOS */
+    .gosto {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        align-items: center;
+    }
+
+    .img-gosto {
+        flex-direction: column;
+        display: flex;
+        gap: 1.5em;
+        align-items: center;
+    }
+
+    .img-gosto li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-gosto img {
+        width: 14em;
+        height: 14em;
+        margin: 0 auto;
+    }
+
+    /* PRESENÇA */
+    .presenca {
+        padding: 2em 1em;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .presenca p {
+        font-size: 1em;
+    }
 }
 
-.controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background 0.3s;
-}
+/* ===========================================
+   TELAS ATÉ 480px (celulares pequenos)
+   =========================================== */
+@media (max-width: 480px) {
 
-.controls button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    * {
+        text-align: center !important;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 0.3em 0.5em;
+    }
+
+    /* HERO */
+    .hero {
+        height: 18em;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .subtitulo {
+        font-size: 0.9em;
+        padding: 0 1em;
+    }
+
+    /* COUNTDOWN */
+    .time-box {
+        font-size: 2.2em;
+    }
+
+    /* PRESENTES */
+    .img-presentes img {
+        width: 11em;
+        height: 11em;
+        margin: 0 auto;
+    }
+
+    /* GOSTOS */
+    .img-gosto img {
+        width: 11em;
+        height: 11em;
+        margin: 0 auto;
+    }
 }
