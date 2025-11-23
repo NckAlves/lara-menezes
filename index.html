@@ -16,16 +16,18 @@
 
 <body>
     <header>
-        <nav>
-            <button>Início</button>
-            <button>Local e Horário</button>
-            <button>Lista de Presentes</button>
-            <button>O que eu gosto</button>
-            <button>Confirmar Presença</button>
+        <nav class="navbar">
+            <div class="logo"></div>
+
+            <a href="#inicio"><button>Início</button></a>
+            <a href="#local"><button>Local e Horário</button></a>
+            <a href="#presentes"><button>Lista de Presentes</button></a>
+            <a href="#gostos"><button>O que eu gosto</button></a>
+            <a href="#presenca"><button>Confirmar Presença</button></a>
         </nav>
     </header>
 
-    <main>
+    <main id="inicio">
         <section class="hero">
             <h1 class="dancing-script">Lara Menezes</h1>
             <p class="subtitulo">Vamos celebrar meu aniversário!</p>
@@ -48,7 +50,7 @@
         </div>
     </section>
 
-    <section class="paper2">
+    <section id="local" class="paper2">
         <div class="local">
             <div class="localizacao">
                 <h3>Palazzo Recepções</h3>
@@ -63,8 +65,8 @@
             </iframe>
         </div>
 
-        <div class="presentes">
-            <div>
+        <div id="presentes" class="presentes">
+            <div class="texto-presentes">
                 <h3>Lista de Presentes</h3>
                 <p>Se você deseja presentear, preparei uma lista com todo carinho.
                     <br>
@@ -72,43 +74,56 @@
                 </p>
                 <p>Você pode conferir a lista com Socorro Cheirosa e na loja Cheia de Charme.</p>
             </div>
-            <div class="cards">
-                <!-- <img src="presentes/dois-pinceis-cosmeticos-e-po-de-rosa-sobre-fundo-escuro.jpg"> -->
 
-                <!-- <img src="presentes/escova-cosmetica-na-nuvem-de-po-de-rosa-sobre-fundo-escuro.jpg">
-                <img src="presentes/frasco-de-perfume-de-alto-angulo.jpg">
-                <img src="presentes/moldura-de-vista-superior-com-cosmeticos-e-copia-espaco.jpg">
-                <img src="presentes/noiva-segurando-seu-perfume.jpg">
-                <img src="presentes/pequena-bolsa-em-still-life-de-estudio.jpg">
-                <img src="presentes/sapatos-da-noiva-rosa-ficar-em-uma-cadeira-com-petalas-de-rosa.jpg">
-                <img src="presentes/variedade-de-vista-superior-com-cosmeticos-e-espaco-para-texto.jpg"> -->
+            <div>
+                <ul class="img-presentes">
+                    <li>
+                        <span>Maquiagem</span>
+                        <img src="maquiagem.jpg">
+                    </li>
+                    <li>
+                        <span>Sapatos</span>
+                        <img src="sapato.jpg">
+                    </li>
+                    <li>
+                        <span>Perfume</span>
+                        <img src="perfume.jpg">
+                    </li>
+                    <li>
+                        <span>Bolsas</span>
+                        <img src="bolsa.jpg">
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <div class="gosto">
-            <div>
+        <div id="gostos" class="gosto">
+            <div class="texto-gosto">
                 <h3>Coisas que eu gosto!</h3>
                 <p>Aqui vão algumas dicas</p>
             </div>
-            <div class="img-gosto">
-                
+            <div>
+                <ul class="img-gosto">
+                    <li>
+                        <span>Rosa!</span>
+                        <img id="rosa" src="rosa.jpeg">
+                    </li>
+                    <li>
+                        <span>Ana Castela!</span>
+                        <img src="castela.jpeg">
+                    </li>
+                    <li>
+                        <span>Flamengo!</span>
+                        <img id="urubu" src="flamengo.jpeg">
+                    </li>
+                </ul>
             </div>
         </div>
-
-
-
-
-        <!-- <div class="carousel">
-                <img src="https://picsum.photos/id/1018/800/400" class="active" alt="Imagem 1">
-                <img src="https://picsum.photos/id/1025/800/400" alt="Imagem 2">
-                <img src="https://picsum.photos/id/1039/800/400" alt="Imagem 3">
-
-                <div class="controls">
-                    <button id="prev">&#10094;</button>
-                    <button id="next">&#10095;</button>
-                </div>
-            </div> -->
-
+    </section>
+    <section id="presenca" class="presenca">
+        <p>Espero você para festejarmos esse momento tão especial!</p>
+        <p>Por favor, confirme sua presença pelo número (81) 999524-0400.</p>
+        <p>Nos encontramos lá!</p>
     </section>
 
     <footer>
@@ -139,32 +154,8 @@
                 }
             }, 1000);
         }
-
         window.onload = iniciarContagemRegressiva;
     </script>
-
-    <script>
-        const images = document.querySelectorAll('.carousel img');
-        let current = 0;
-
-        document.getElementById('next').addEventListener('click', () => {
-            images[current].classList.remove('active');
-            current = (current + 1) % images.length;
-            images[current].classList.add('active');
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-            images[current].classList.remove('active');
-            current = (current - 1 + images.length) % images.length;
-            images[current].classList.add('active');
-        });
-
-        // Auto play (opcional)
-        setInterval(() => {
-            document.getElementById('next').click();
-        }, 4000);
-    </script>
-
 </body>
 
 </html>
